@@ -1,5 +1,5 @@
+settings.py
 tweetbot/fix.py
-twitter_credentials.py
 tweetbot/oldcorpus.txt
 tweetbot/minionface.ai
 *.pyc
