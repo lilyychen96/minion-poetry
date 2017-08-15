@@ -6,13 +6,17 @@ import random
 import grammar as g
 from time import sleep
 
-if os.getenv("HEROKU"):
+if(os.environ.get('IS_HEROKU', None)):
     consumer_key = os.getenv("CONSUMER_KEY")
     consumer_secret = os.getenv("CONSUMER_SECRET")
     access_token = os.getenv("ACCESS_TOKEN")
     access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
 else:
-    from settings import consumer_key, consumer_secret, access_token, access_token_secret
+    import settings
+    consumer_key = settings.consumer_key
+    consumer_secret = settings.consumer_secret
+    access_token = settings.access_token
+    access_token_secret = settings.access_token_secret
 
 class TweetBot:
     def __init__(self, corpus):
@@ -34,7 +38,7 @@ class TweetBot:
         message = self.model.make_short_sentence(140)
 
         words = list(message)
-        while (words[-1] in g.prepositions):
+        while(words[-1] in g.prepositions):
             message = self.model.make_short_sentence(140)
             words = list(message)
 
