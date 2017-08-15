@@ -1,3 +1,6 @@
+from __future__ import unicode_literals
+# Supposedly fixes the tweepy unicode issue
+
 import os
 import tweepy
 import markovify
@@ -6,6 +9,7 @@ import random
 import grammar as g
 from time import sleep
 
+# The following was such a headache...
 if(os.environ.get('IS_HEROKU', None)):
     consumer_key = os.getenv("CONSUMER_KEY")
     consumer_secret = os.getenv("CONSUMER_SECRET")
@@ -17,6 +21,8 @@ else:
     consumer_secret = settings.consumer_secret
     access_token = settings.access_token
     access_token_secret = settings.access_token_secret
+
+
 
 class TweetBot:
     def __init__(self, corpus):
@@ -62,6 +68,7 @@ class TweetBot:
 def main():
     bot = TweetBot("corpus.txt")
     bot.automate(300)
+
 
 if __name__ == "__main__":
     main()
