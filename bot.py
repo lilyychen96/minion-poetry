@@ -11,8 +11,8 @@ if os.getenv("HEROKU"):
     consumer_secret = os.getenv("CONSUMER_SECRET")
     access_token = os.getenv("ACCESS_TOKEN")
     access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
-else:
-    from settings import *
+
+from settings import *
 
 class TweetBot:
     def __init__(self, corpus):
