@@ -10,12 +10,7 @@ import grammar as g
 from time import sleep
 
 # The following was such a headache...
-import settings as s
-consumer_key = s.consumer_key.encode('utf-8')
-consumer_secret = s.consumer_secret.encode('utf-8')
-access_token = s.access_token.encode('utf-8')
-access_token_secret = s.access_token_secret.encode('utf-8')
-
+from settings import consumer_key, consumer_secret, access_token, access_token_secret
 
 
 class TweetBot:
