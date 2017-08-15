@@ -57,7 +57,7 @@ class TweetBot:
 
 def main():
     bot = TweetBot("corpus.txt")
-    bot.automate(3000)
+    bot.automate(300)
 
 if __name__ == "__main__":
     main()
