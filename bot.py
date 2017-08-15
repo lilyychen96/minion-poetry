@@ -12,7 +12,7 @@ if os.getenv("HEROKU"):
     access_token = os.getenv("ACCESS_TOKEN")
     access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
 
-from settings import *
+from settings import consumer_key, consumer_secret, access_token, access_token_secret
 
 class TweetBot:
     def __init__(self, corpus):
@@ -32,6 +32,11 @@ class TweetBot:
 
     def tweet(self):
         message = self.model.make_short_sentence(140)
+
+        words = list(message)
+        while (words[-1] in g.prepositions):
+            message = self.model.make_short_sentence(140)
+            words = list(message)
 
         for char in string.punctuation:
             if(message.endswith(char)):
