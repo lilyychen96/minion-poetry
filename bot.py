@@ -51,12 +51,12 @@ class TweetBot:
 
     def automate(self, delay):
         self.tweet()
-        # sleep(delay)
+        sleep(delay)
 
 
 def main():
     bot = TweetBot("corpus.txt")
-    bot.automate(300)
+    bot.automate(900)
 
 
 if __name__ == "__main__":
