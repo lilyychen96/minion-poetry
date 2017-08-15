@@ -1,6 +1,3 @@
-from __future__ import unicode_literals
-# Supposedly fixes the tweepy unicode issue
-
 import os
 import tweepy
 import markovify
@@ -9,9 +6,12 @@ import random
 import grammar as g
 from time import sleep
 
-# The following was such a headache...
-from settings import consumer_key, consumer_secret, access_token, access_token_secret
+from keys import keys
 
+consumer_key = keys['consumer_key']
+consumer_secret = keys['consumer_secret']
+access_token = keys['access_token']
+access_token_secret = keys['access_token_secret']
 
 class TweetBot:
     def __init__(self, corpus):
