@@ -1,0 +1,8 @@
+tweetbot/fix.py
+tweetbot/twitter_credentials.py
+tweetbot/oldcorpus.txt
+tweetbot/minionface.ai
+*.pyc
+__pycache__
+staticfiles
+.git
