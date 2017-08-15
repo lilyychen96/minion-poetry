@@ -1,7 +1,5 @@
 keys.py
-tweetbot/fix.py
-tweetbot/oldcorpus.txt
-tweetbot/minionface.ai
+tweetbot
 *.pyc
 __pycache__
 staticfiles
