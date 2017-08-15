@@ -10,17 +10,11 @@ import grammar as g
 from time import sleep
 
 # The following was such a headache...
-if(os.environ.get('IS_HEROKU', None)):
-    consumer_key = os.getenv("CONSUMER_KEY")
-    consumer_secret = os.getenv("CONSUMER_SECRET")
-    access_token = os.getenv("ACCESS_TOKEN")
-    access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
-else:
-    import settings
-    consumer_key = settings.consumer_key
-    consumer_secret = settings.consumer_secret
-    access_token = settings.access_token
-    access_token_secret = settings.access_token_secret
+from settings import *
+#consumer_key = settings.consumer_key
+ #   consumer_secret = settings.consumer_secret
+  #  access_token = settings.access_token
+   # access_token_secret = settings.access_token_secret
 
 
 
