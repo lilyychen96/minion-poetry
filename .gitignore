@@ -1,5 +1,5 @@
 keys.py
-huhcorpus.txt
+tweetbot/huhcorpus.txt
 tweetbot/fix.py
 tweetbot/markov.py
 tweetbot/minionface.ai

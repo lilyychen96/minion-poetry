@@ -5,15 +5,15 @@ import string
 import random
 from time import sleep
 
-import grammar as g
+from grammar import punctuation, prepositions
 from mideng import mideng_lib
 from minlib import minion_lib
-from keys import keys
+from keys import key
 
-consumer_key = keys['consumer_key']
-consumer_secret = keys['consumer_secret']
-access_token = keys['access_token']
-access_token_secret = keys['access_token_secret']
+consumer_key = key['consumer_key']
+consumer_secret = key['consumer_secret']
+access_token = key['access_token']
+access_token_secret = key['access_token_secret']
 
 
 class TweetBot:
@@ -37,19 +37,20 @@ class TweetBot:
         words = message.split()
 
         # get rid of pesky prepositions at the end of tweet
-        while(words[-1] in g.prepositions):
+        while(words[-1] in prepositions):
             message = self.model.make_short_sentence(140)
             words = message.split()
             message = " ".join(words)
 
         message = translate(message)
+        print(message)
 
         # check for or add punctuation
         for char in string.punctuation:
             while(message.endswith(char)):
                 message = message[0:-1]
 
-        message = message.strip() + g.punctuation[random.randint(0, 4)]
+        message = message.strip() + punctuation[random.randint(0, 4)]
 
         try:
             print(message + "\n")
@@ -64,7 +65,6 @@ class TweetBot:
 
 
 def translate(message):
-    print(message)
     # translate from Middle English to Modern English, if applicable
     old = message.split()
     modern = list()
