@@ -4,7 +4,6 @@ tweetbot/fix.py
 tweetbot/markov.py
 tweetbot/minionface.ai
 tweetbot/oldcorpus.txt
-markov.py
 *.pyc
 __pycache__
 staticfiles

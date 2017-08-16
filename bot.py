@@ -42,18 +42,17 @@ class TweetBot:
             words = message.split()
             message = " ".join(words)
 
-        words = translate(message).split()
-        message = " ".join(words)
+        message = translate(message)
 
         # check for or add punctuation
         for char in string.punctuation:
             while(message.endswith(char)):
                 message = message[0:-1]
-        
+
         message = message.strip() + g.punctuation[random.randint(0, 4)]
 
         try:
-            # print(message + "\n")
+            print(message + "\n")
             self.api.update_status(message)
         except tweepy.TweepError as error:
             print(error.reason)
@@ -82,6 +81,9 @@ def translate(message):
     # for word in modern:
     #   if(word in minion_lib): new.append(minion_lib[word])
     #   else: new.append(word)
+
+    # temporary line
+    new = modern
 
     return " ".join(new)
 
