@@ -1,4 +1,4 @@
-punctuation = ['.', '...', '!', '?', ""]
+punctuation = ['.', '...', '!', '?', "",  "", ""]
 
 prepositions = ['with', 'at', 'from', 'into', 'during', 'of', 'to', 'in',
                 'for', 'on', 'by', 'about', 'including', 'until', 'against',
