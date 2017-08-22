@@ -75,16 +75,14 @@ def translate(message):
     # Throw back into string in case a translation results in >1 separate words
     temp = " ".join(modern)
 
-    # translate to Minionese !!! CURRENTLY DISABLED BECAUSE INCOHERENT
+    # translate to Minionese
     modern = temp.split()
     new = list()
-    # for word in modern:
-    #   if(word in minion_lib): new.append(minion_lib[word])
-    #   else: new.append(word)
+    for word in modern:
+      if(word in minion_lib): new.append(minion_lib[word])
+      else: new.append(word)
 
-    # temporary line
-    new = modern
-
+    # translation is now incoherent!
     return " ".join(new)
 
 
