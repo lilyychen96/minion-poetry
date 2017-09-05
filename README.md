@@ -17,4 +17,5 @@ The following texts were used to construct the corpus:
 
 ## Translation dictionaries:
 The Minion translator library is derived from Bryce Dorn's minion translator dictionary: https://github.com/brycedorn/miniontranslator/blob/master/js/library.js
+
 In addition, a Middle & Early Modern English to Modern English dictionary was constructed due to the nature of many of the poems featured in the corpus to ease translation into Minionese.
