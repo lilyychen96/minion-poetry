@@ -43,7 +43,6 @@ class TweetBot:
             message = " ".join(words)
 
         message = translate(message)
-        print(message)
 
         # check for or add punctuation
         for char in string.punctuation:
@@ -65,6 +64,7 @@ class TweetBot:
 
 
 def translate(message):
+    print(message)
     # translate from Middle English to Modern English, if applicable
     old = message.split()
     modern = list()
